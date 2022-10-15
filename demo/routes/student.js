@@ -45,7 +45,9 @@ router.get('/add', (req, res) => {
 router.post('/add', (req, res) => {
     var student = new StudentModel(req.body)
     student.save((err) => {
-        if (!err) {
+        if (err) {
+            console.log(err)
+        } else {
             console.log("Add student succeed !")
             res.redirect("/student")
         }
@@ -86,13 +88,13 @@ router.get('/detail/:id', (req, res) => {
 
 //search function
 router.post('/search', (req, res) => {
-        StudentModel.find({ name: new RegExp(req.body.name, "i") }, (err, data) => {
-            if (!err) {
-                res.render('student/index', { student: data })
-            }
-        })
+    StudentModel.find({ name: new RegExp(req.body.name, "i") }, (err, data) => {
+        if (!err) {
+            res.render('student/index', { student: data })
+        }
     })
-    //sort function
+})
+//sort function
 router.get('/sort/asc', (req, res) => {
     StudentModel.find()
         .sort({ name: 1 })
