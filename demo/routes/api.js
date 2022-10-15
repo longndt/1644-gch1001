@@ -30,6 +30,7 @@ router.delete('/:id', (req, res) => {
    })
 })
 
+//add: insert (...) values (...) into student 
 router.post('/', (req, res) => {
    StudentModel.create(req.body, (err, data) => {
       if (!err) {
@@ -38,12 +39,14 @@ router.post('/', (req, res) => {
    })
 })
 
+//update: update from student where _id = "id"
 router.put('/:id', (req, res) => {
-   StudentModel.findByIdAndUpdate(req.body, (err, data) => {
-      if (!err) {
-         res.json(data)
-      }
-   })
+   StudentModel.findByIdAndUpdate(req.params.id, req.body,
+      (err, data) => {
+         if (!err) {
+            res.json(data)
+         }
+      })
 })
 
 
