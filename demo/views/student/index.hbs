@@ -1,0 +1,58 @@
+<table class="table table-bordered bg-light p-4 mt-3 mb-3 text-center">
+   <tr>
+      <th class="text-primary" colspan="5">Student List</th>
+      <th>
+         <a class="btn btn-primary" href="/student/add">ADD</a>
+         <a class="btn btn-success" href="/student/drop"
+            onclick="return confirm('Are you sure to drop all student ?');">DROP</a>
+      </th>
+   </tr>
+   <tr>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Date</th>
+      <th>Image</th>
+      <th>Status</th>
+      <th>Menu</th>
+   </tr>
+   <tr>
+      <th colspan="5">
+         <select class="form-control" onchange="window.location.href=this.value">
+            <option value="">Sort by name</option>
+            <option value="/student/sort/asc">Ascending</option>
+            <option value="/student/sort/desc">Descending</option>
+         </select>
+      </th>
+      <th colspan="1">
+         <form action="/student/search" method="post">
+            <div class="form-group">
+               <input class="form-control" type="search" name="name" placeholder="Search by name">
+            </div>
+         </form>
+      </th>
+   </tr>
+   {{#each student }}
+   <tr>
+      <td>{{name}}</td>
+      <td>{{gender}}</td>
+      <td>{{dateFormat dob "DD/MM/YYYY"}}</td>
+      <td>
+         <a href="/student/detail/{{_id}}">
+            <img src="{{image}}" width="100" height="100">
+         </a>
+      </td>
+      <td>
+         {{#equal graduated true}}
+         <span style="color: red; font-weight: bold;">Graduated</span>
+         {{/equal}}
+         {{#equal graduated false}}
+         <span style="color: blue; font-style: italic;">Ungraduated</span>
+         {{/equal}}
+      </td>
+      <td>
+         <a class="btn btn-warning" href="/student/edit/{{_id}}">EDIT</a>
+         <a class="btn btn-danger" href="/student/delete/{{_id}}">DELETE</a>
+      </td>
+   </tr>
+   {{/each}}
+</table>

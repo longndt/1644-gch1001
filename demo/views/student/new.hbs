@@ -1,0 +1,47 @@
+<div class="container col-md-8 mt-5">
+   <form action="/student/add" method="post" class="card p-3 bg-light text-center">
+      <h2 class="text text-primary">Add new student</h2>
+      <div class="form-group">
+         <label class="text-success h6">Student Name</label>
+         <input class="form-control" type="text" name="name" required minlength="3" maxlength="20">
+      </div>
+      <div class="form-group mt-3">
+         <label class="text-success h6">Student Email</label>
+         <input class="form-control" type="email" name="email" required minlength="3" maxlength="20">
+      </div>
+      <div class="form-group mt-3">
+         <label class="text-success h6">Student Gender</label><br>
+         Male <input type="radio" name="gender" value="Male">
+         Female <input type="radio" name="gender" value="Female">
+      </div>
+      <div class="form-group mt-3">
+         <label class="text-success h6">Student Image</label>
+         <input class="form-control" type="text" name="image" required>
+      </div>
+      <div class="form-group mt-3">
+         <label class="text-success h6">Student Birthday</label>
+         <input class="form-control" type="date" name="dob" required>
+      </div>
+      <div class="form-group mt-3">
+         <label class="text-success h6">Student Year</label>
+         <select name="year" class="form-control">
+            <option value="">Select a year</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+         </select>
+      </div>
+      <div class="form-group mt-3">
+         <label class="text-success h6">Student Grade</label>
+         <input class="form-control" type="number" name="grade" required min=0 max=10>
+      </div>
+      <div class="form-group mt-3">
+         <label class="text-success h6">Graduated</label>
+         <input type="checkbox" name="graduated" value="true">
+      </div>
+      <div class="form-group mt-3">
+         <input class="btn btn-primary mt-3" type="submit" value="Add">
+      </div>
+   </form>
+</div>

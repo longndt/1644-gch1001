@@ -1,0 +1,82 @@
+<div class="container col-md-8 mt-5">
+   <form action="/student/edit/{{student._id}}" method="post" class="card p-3 bg-light text-center">
+      <h2 class="text text-primary">Edit student</h2>
+      <div class="form-group">
+         <label class="text-success h6">Student Name</label>
+         <input class="form-control" type="text" name="name" value="{{student.name}}" required minlength="3"
+            maxlength="20">
+      </div>
+      <div class="form-group mt-3">
+         <label class="text-success h6">Student Email</label>
+         <input class="form-control" type="email" name="email" value="{{student.email}}" required minlength="3"
+            maxlength="20">
+      </div>
+      <div class="form-group mt-3">
+         <label class="text-success h6">Student Gender</label>
+         <br>
+         {{#equal student.gender "Male"}}
+         Male <input type="radio" name="gender" value="Male" checked>
+         Female <input type="radio" name="gender" value="Female">
+         {{/equal}}
+         {{#equal student.gender "Female"}}
+         Male <input type="radio" name="gender" value="Male">
+         Female <input type="radio" name="gender" value="Female" checked>
+         {{/equal}}
+      </div>
+      <div class="form-group mt-3">
+         <label class="text-success h6">Student Image</label><br>
+         <img src="{{student.image}}" width="100" height="100">
+         <input class="form-control mt-3" type="text" name="image" value="{{student.image}}" required>
+      </div>
+      <div class="form-group mt-3">
+         <label class="text-success h6">Student Birthday</label>
+         <input class="form-control" type="date" name="dob" value="{{dateFormat student.dob 'YYYY-MM-DD'}}" required>
+      </div>
+      <div class="form-group mt-3">
+         <label class="text-success h6">Student Year</label>
+         <select name="year" class="form-control">
+            <option value="">Select a year</option>
+            {{#equal student.year 1}}
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            {{/equal}}
+            {{#equal student.year 2}}
+            <option value="1">1</option>
+            <option value="2" selected>2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            {{/equal}}
+            {{#equal student.year 3}}
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3" selected>3</option>
+            <option value="4">4</option>
+            {{/equal}}
+            {{#equal student.year 4}}
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4" selected>4</option>
+            {{/equal}}
+         </select>
+      </div>
+      <div class="form-group mt-3">
+         <label class="text-success h6">Student Grade</label>
+         <input class="form-control" type="number" name="grade" value="{{student.grade}}" required min=0 max=10>
+      </div>
+      <div class="form-group mt-3">
+         <label class="text-success h6">Graduated</label>
+         {{#equal student.graduated true}}
+         <input type="checkbox" value="{{student.graduated}}" checked>
+         {{/equal}}
+         {{#equal student.graduated false}}
+         <input type="checkbox" value="{{student.graduated}}">
+         {{/equal}}
+      </div>
+      <div class="form-group mt-3">
+         <input class="btn btn-primary mt-3" type="submit" value="Edit">
+      </div>
+   </form>
+</div>

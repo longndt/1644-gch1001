@@ -1,0 +1,12 @@
+<h5>Some cities in {{country}}: </h5>
+{{! foreach loop }}
+<table border="1">
+  <tr>
+    <th>City</th>
+  </tr>
+  {{#each cities}}
+    <tr>
+      <td>{{this}}</td>
+    </tr>
+  {{/each}}
+</table>
