@@ -1,0 +1,12 @@
+<div class="container col-md-10 text-center mt-5">
+   <h1 class="text text-secondary">Fetch API from front-end with HTML + Javascript</h1>
+
+   {{!-- api data will be displayed here --}}
+</div>
+
+<script>
+   let url = "http://localhost:3000/api"
+   fetch(url)
+      .then(response => response.json())
+      .then(data => console.log(data))
+</script>
