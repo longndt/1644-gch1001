@@ -2,6 +2,16 @@ const express = require('express')
 const StudentModel = require('../models/StudentModel')
 const router = express.Router()
 
+
+router.get('/drop', (req, res) => {
+    StudentModel.deleteMany({}, () => {
+        console.log("Delete all data succeed !")
+        res.redirect('/student')
+    })
+})
+
+
+
 //URL: localhost:3000/student
 router.get('/', (req, res) => {
     StudentModel.find((err, data) => {
