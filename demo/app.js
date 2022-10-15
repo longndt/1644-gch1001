@@ -9,9 +9,6 @@ var studentRouter = require('./routes/student')
 var lecturerRouter = require('./routes/lecturer')
 var apiRouter = require('./routes/api')
 
-//Lỗi cors là một chính sách của trình duyệt nhằm ngăn chặn việc truy cập tài nguyên của các domain khác khi không được phép
-var cors = require('cors')
-
 var mongoose = require('mongoose')
 var url =
     'mongodb://localhost:27017/cloud'
@@ -39,7 +36,14 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'hbs')
 
+
+//Module dùng cho trao đổi dữ liệu API với front-end
+//Note: cần cài đặt package "cors" trước
+//cmd: npm install cors
+var cors = require('cors')
 app.use(cors())
+
+
 app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
