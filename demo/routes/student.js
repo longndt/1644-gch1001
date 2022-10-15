@@ -53,12 +53,20 @@ router.get('/add', (req, res) => {
 
 //nhận & xử lý dữ liệu từ form ADD
 router.post('/add', (req, res) => {
-    var student = new StudentModel(req.body)
-    student.save((err) => {
-        if (err) {
-            console.log(err)
-        } else {
-            console.log("Add student succeed !")
+    //Cách 1: dùng "save"
+    // var student = new StudentModel(req.body)
+    // student.save((err) => {
+    //     if (err) {
+    //         console.log(err)
+    //     } else {
+    //         console.log("Add student succeed !")
+    //         res.redirect("/student")
+    //     }
+    // })
+    //Cách 2: dùng "create"
+    StudentModel.create(req.body, (err) => {
+        if (!err) {
+            console.log('Add student succeed !')
             res.redirect("/student")
         }
     })
