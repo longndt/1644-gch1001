@@ -23,19 +23,6 @@ router.get('/', (req, res) => {
     })
 })
 
-<<<<<<< HEAD
-=======
-router.get('/api', (req, res) => {
-    StudentModel.find((err, data) => {
-        if (!err) {
-            //res.send(data)
-            //render ra trang index ở thư mục views/student
-            res.json(data)
-        }
-    })
-})
->>>>>>> 6604ff11cea57b9c19932a636ca6dd633d8272f6
-
 router.get('/delete/:id', (req, res) => {
     StudentModel.findByIdAndDelete(req.params.id, (err) => {
         if (err) {
@@ -135,10 +122,4 @@ router.get('/sort/desc', (req, res) => {
             }
         })
 })
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 6604ff11cea57b9c19932a636ca6dd633d8272f6
 module.exports = router
