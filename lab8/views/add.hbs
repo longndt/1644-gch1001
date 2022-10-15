@@ -1,0 +1,42 @@
+<div class="container col-md-6 text-center mt-3">
+  <form class="card bg-light p-4" action="/add" method="post">
+    <h1>Add new student</h1>
+    <div class="form-group mt-3">
+      <label class="h6 text-success">Tên</label>
+      <input
+        class="form-control"
+        type="text"
+        name="name"
+        required
+        minlength="3"
+        maxlength="30"
+      />
+    </div>
+    <div class="form-group mt-3">
+      <label class="h6 text-success">Tuổi</label>
+      <input
+        class="form-control"
+        type="number"
+        name="age"
+        required
+        min="1"
+        max="120"
+      />
+    </div>
+    <div class="form-group mt-3">
+      <label class="h6 text-success">Email</label>
+      <input class="form-control" type="email" name="email" required />
+    </div>
+    <div class="form-group mt-3">
+      <label class="h6 text-success">Ảnh</label>
+      <input class="form-control" type="text" name="image" required />
+    </div>
+    <div class="form-group mt-3">
+      <label class="h6 text-success">Địa chỉ</label>
+      <input class="form-control" type="text" name="address" required />
+    </div>
+    <div class="form-group mt-3">
+      <input class="btn btn-primary" type="submit" value="Add" />
+    </div>
+  </form>
+</div>
