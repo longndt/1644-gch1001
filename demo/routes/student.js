@@ -122,6 +122,7 @@ router.get('/sort/asc', (req, res) => {
             }
         })
 })
+
 router.get('/sort/desc', (req, res) => {
     StudentModel.find()
         .sort({ name: -1 })
@@ -132,32 +133,6 @@ router.get('/sort/desc', (req, res) => {
         })
 })
 
-router.get('/api', (req, res) => {
-    StudentModel.find((err, data) => {
-        if (!err) {
-            res.json(data)
-        }
-    })
-})
 
-//api delete
-
-router.delete('/api/delete/:id', (req, res) => {
-    StudentModel.findByIdAndDelete(req.params.id, (err) => {
-        if (!err) {
-            res.send("Delete mobile succeed !");
-        }
-    })
-})
-
-
-router.post('/api/add', (req, res) => {
-    var student = new StudentModel(req.body)
-    student.save((err) => {
-        if (!err) {
-            res.json({ "Message": "Add succeed !" })
-        }
-    })
-})
 
 module.exports = router
