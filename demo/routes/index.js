@@ -7,23 +7,6 @@ router.get('/', (req, res) => {
   res.render('index')
 })
 
-router.get('/linknaocungduoc', (req, res) => {
-  res.render('tengicungduoc')
-})
 
-router.get('/quote', (req, res) => {
-  var text = "<h1 style='color: red;'>Practice makes perfect</h1>"
-  res.send(text)
-})
-
-router.get('/api', (req, res) => {
-  var data = {
-    name: 'Nguyen Tuan Minh',
-    age: 50,
-    address: 'Ha Noi',
-    gender: 'male'
-  }
-  res.json(data)
-})
 
 module.exports = router
