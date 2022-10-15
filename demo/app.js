@@ -11,7 +11,7 @@ var apiRouter = require('./routes/api')
 
 var mongoose = require('mongoose')
 var url =
-    'mongodb://localhost:27017/cloud'
+    'mongodb+srv://longndt:xdHB48B3Fv*%40TPa@cluster0.i5kings.mongodb.net/cloud'
 
 // var url =
 //     'mongodb+srv://codecode12345:123456789m@cluster0.ik5tvr8.mongodb.net/cloud'
