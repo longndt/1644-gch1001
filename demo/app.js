@@ -13,8 +13,6 @@ var mongoose = require('mongoose')
 var url =
     'mongodb+srv://longndt:xdHB48B3Fv*%40TPa@cluster0.i5kings.mongodb.net/cloud'
 
-// var url =
-//     'mongodb+srv://codecode12345:123456789m@cluster0.ik5tvr8.mongodb.net/cloud'
 mongoose.connect(url, { useNewUrlParser: true }, err => {
     if (!err) {
         console.log('DB connect succeed !')
