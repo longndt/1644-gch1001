@@ -23,6 +23,15 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/list', (req, res) => {
+    StudentModel.find((err, data) => {
+        if (!err) {
+            res.render('student/list', { student: data, })
+        }
+    })
+})
+
+
 router.get('/delete/:id', (req, res) => {
     StudentModel.findByIdAndDelete(req.params.id, (err) => {
         if (err) {
@@ -38,6 +47,7 @@ router.get('/delete/:id', (req, res) => {
 
 //render ra form ADD
 router.get('/add', (req, res) => {
+
     res.render("student/new");
 })
 

@@ -6,7 +6,6 @@ var logger = require('morgan')
 
 var indexRouter = require('./routes/index')
 var studentRouter = require('./routes/student')
-var lecturerRouter = require('./routes/lecturer')
 var apiRouter = require('./routes/api')
 
 var mongoose = require('mongoose')
@@ -50,7 +49,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', indexRouter)
 app.use('/student', studentRouter)
-app.use('/lecturer', lecturerRouter)
 app.use('/api', apiRouter)
 
 // catch 404 and forward to error handler

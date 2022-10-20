@@ -1,0 +1,17 @@
+<div class="container text-center">
+   <div class="card-group">
+      <div class="row">
+         {{#each student}}
+         <div class="card col-md-3 m-3">
+            <a href="/student/detail/{{_id}}">
+               <img class="card-img-top mt-4" src="{{image}}" width="200" height="200">
+            </a>
+            <div class="card-body">
+               <h4 class="card-title text-success">{{name}}</h4>
+               <p class="card-text text-danger">{{gender}}</p>
+            </div>
+         </div>
+         {{/each}}
+      </div>
+   </div>
+</div>
